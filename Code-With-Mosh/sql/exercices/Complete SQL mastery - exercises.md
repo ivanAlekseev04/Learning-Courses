@@ -894,13 +894,13 @@ CREATE TABLE people (
 
 # Project "Flight booking system"
 
-[Flight Booking System requirements](./file/Flight%20Booking%20System.pdf)
+[Flight Booking System requirements](../file/Flight%20Booking%20System.pdf)
 
 <img src="../img/Flight Booking System.svg" alt="Flight Booking System physical model" width="1100">
 
 # Project "Vidly"
 
-[Vidly requirements](./file/Vidly.pdf)
+[Vidly requirements](../file/Vidly.pdf)
 
 <img src="../img/Vidly.svg" alt="Vidly physical model" width="1300">
 
