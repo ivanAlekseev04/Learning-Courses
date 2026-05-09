@@ -896,13 +896,13 @@ CREATE TABLE people (
 
 [Flight Booking System requirements](./file/Flight%20Booking%20System.pdf)
 
-<img src="./img/Flight Booking System.svg" alt="Flight Booking System physical model" width="1100">
+<img src="../img/Flight Booking System.svg" alt="Flight Booking System physical model" width="1100">
 
 # Project "Vidly"
 
 [Vidly requirements](./file/Vidly.pdf)
 
-<img src="./img/Vidly.svg" alt="Vidly physical model" width="1300">
+<img src="../img/Vidly.svg" alt="Vidly physical model" width="1300">
 
 # Indexes
 

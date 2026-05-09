@@ -2,4 +2,4 @@
 Every subfolder corresponds to certain course available from the above link
 ### Finished courses
 * [Ultimate git course](https://codewithmosh.com/p/the-ultimate-git-course)
-* [Complete SQL master](https://codewithmosh.com/p/complete-sql-mastery)
+* [Complete SQL mastery](https://codewithmosh.com/p/complete-sql-mastery)
