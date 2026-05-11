@@ -18,7 +18,7 @@
 
 ## Aggregate functions:
 * Aggregate functions for certain column don't take into consideration NULL values for the specified column (example: COUNT(name) will count only NOT NULL names)
-* Aggregate functions to start taking into consideration NULL values use "*" instead of column name (example: COUNT(*) will count all the names)
+* Aggregate functions to start taking into consideration NULL values use `*` instead of column name (example: COUNT(\*) will count all the names)
 * COUNT(DISTINCT age) will count only once some certain age value even if there are duplicate
 * Aggregate functions can have expressions inside them: SELECT COUNT(price * 0.1) (expression has higher priority than aggregate function and will be executed firstly)
 
@@ -38,7 +38,7 @@ SELECT *
 FROM invoices i 
 WHERE i.invoice_total > (SELECT avg(i2.invoice_total) 
                          FROM invoices i2 
-						 WHERE i2.client_id = i.client_id)
+                         WHERE i2.client_id = i.client_id)
 ```
 
 ## EXISTS query:									
@@ -371,7 +371,7 @@ VALUES (1, 'Alice', 5000),   -- ✅ OK
 * VARCHAR (...) => variable length. Only those positions that needed will be filled with content | 64kb MAX
 * TEXT => native to the PostgreSQL and to some other SQL languages, isn't part of the standard. Allows to store string values of any length
 * If CHAR and VARCHAR are used without length specification, then they can store any amount of symbols
-* Bytes: English symbol (1 byte), Easter Europe (2 bytes), Asia (3 bytes); CHAR(10) = 30 bytes (in case of Asia locale)
+* Bytes: English symbol (1 byte), Eastern Europe (2 bytes), Asia (3 bytes); CHAR(10) = 30 bytes (in case of Asia locale)
 
 ### Integer types (Store whole numbers without decimal point):
 * `TINYINT` [-128, 127]
@@ -430,8 +430,8 @@ INTERVAL '1 year 2 months 3 days 4 hours 5 minutes 6 seconds
 2. Input speed: JSON is faster (just stored the text) while JSONB is slower (parses + converts)
 3. Query speed: JSON is slower (re-parses every time) while JSONB is significantly faster (pre-parsed)
 4. Indexing: JSON is limited while JSONB allows full GIN indexing
-5. Duplicate keys: JSON allows duplicate keys while JSON only stores the last key-value pair !
-6. Formatting: JSON preserves key order initial and whitespace while JSONB doesn't preserver key-order and strip white spaces
+5. Duplicate keys: JSON allows **duplicate keys** while JSONB only stores the last key-value pair !
+6. Formatting: JSON preserves key order initial and whitespace while JSONB doesn't preserve key-order and strip white spaces
 
 <br>
 
@@ -498,7 +498,7 @@ fk_<child table>_<parent table>
 ```
 
 ### Foreign key constraints:
-1. `NO ACTION`: is giving error if the child rows exists and parent rows with respective PK is going to be deleted
+1. `NO ACTION`: is giving error if the child rows exist and parent rows with respective PK are going to be deleted
 2. `RESTRICT`: same as NO ACTION
 3. `CASCADE`: is updating/deleting child rows in case parent row was changed/deleted
 4. `SET NULL`: sets NULL value to the FK in case of update/delete of the parent row (generally is a bad practice since it'll lead to orphan records and there won't be clear what is the parent row of this child row)
