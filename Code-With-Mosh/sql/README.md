@@ -1367,7 +1367,7 @@ WHERE order_nr = 3501; -- The order 3501 might be among the billed or unbilled o
 
 * If we defined index on columns (`a`, `b`) and then we are sorting with `ORDER BY a, c, b`, no index will be utilized since `c` is breaking the compound index
 
-# Full text search (FTS): later write about that, maybe can replace search by attributes in AviView
+# Full text search (FTS)
 
 ## FTS
 * Is a PostgreSQL alternative to `ElasticSearch`
